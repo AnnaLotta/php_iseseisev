@@ -17,6 +17,13 @@ class template
     var $file = ''; // template file name
     var $content = false; // template content is now empty
     // class methods
+    // construct
+    function __construct($f)
+    {
+        $this->file = $f;
+        $this->loadFile();
+    }// construct
+
     function loadFile()
     {
         $f = $this->file; // use file name variable
@@ -26,25 +33,27 @@ class template
             exit;
         }
         // if we are in tmpl directory already - $this->file is 'tmpl/file.html'
-        if(file_exists($f) and is_file($f) and is_readable($f)){
+        if (file_exists($f) and is_file($f) and is_readable($f)) {
             $this->readFile($f);
         }
         // we can set path to template file: tmpl/file.html, $this->file is file.html
-        $f = TMPL_DIR.$this->file;
-        if(file_exists($f) and is_file($f) and is_readable($f)){
+        $f = TMPL_DIR . $this->file;
+        if (file_exists($f) and is_file($f) and is_readable($f)) {
             $this->readFile($f);
         }
         // we can ser only file name, $this->file is file
-        $f = TMPL_DIR.$this->file.'.html';
-        if(file_exists($f) and is_file($f) and is_readable($f)){
+        $f = TMPL_DIR . $this->file . '.html';
+        if (file_exists($f) and is_file($f) and is_readable($f)) {
             $this->readFile($f);
         }
-        if($this->content === false){
-            echo 'Ei suutnud lugeda '.$this->file.'<br/>';
+        if ($this->content === false) {
+            echo 'Ei suutnud lugeda ' . $this->file . '<br/>';
             exit;
         }
     }// loadfile
-    function readFile($f){
+
+    function readFile($f)
+    {
         $this->content = file_get_contents($f);
-    }// readfile
-}// class end
+    }
+}
