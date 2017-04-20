@@ -28,8 +28,16 @@ echo '<hr/>';
 $sentence2 = new text ('Text by construct');
 // control object output
 echo '<pre>';
-print_r($sentence2);
+print_r($sentence);
 echo '</pre>';
 //show object output
-$sentence2->show();
+$sentence->show();
+echo '<hr/>';
+// create and object
+$sentence2 = new text ('Hello text by construct');
+// control object output
+echo '<pre>';
+print_r($sentence2);
+echo '</pre>';
+// show object output
 ?>
