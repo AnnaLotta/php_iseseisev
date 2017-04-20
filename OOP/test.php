@@ -6,8 +6,9 @@
  * Time: 1:45 PM
  */
 
-// require the object creating and using class
-require_once('OOP/text.php');
+// require the object creating and using classes
+require_once('text.php');
+require_once('ctext.php');
 // create an object
 $sentence = new text();
 // control object output
@@ -28,16 +29,25 @@ echo '<hr/>';
 $sentence2 = new text ('Text by construct');
 // control object output
 echo '<pre>';
-print_r($sentence);
-echo '</pre>';
-//show object output
-$sentence->show();
-echo '<hr/>';
-// create and object
-$sentence2 = new text ('Hello text by construct');
-// control object output
-echo '<pre>';
 print_r($sentence2);
 echo '</pre>';
+//show object output
+$sentence2->show();
+echo '<hr/>';
+// create and object
+$sentence3 = new text ('Hello colored text by construct');
+// control object output
+echo '<pre>';
+print_r($sentence3);
+echo '</pre>';
 // show object output
+
+$sentence3->show();
+// set object color
+$sentence3->setColor('#FF0000');
+echo '<pre>';
+print_r($sentence3);
+echo '</pre>';
+//show object output
+$sentence3->show();
 ?>
