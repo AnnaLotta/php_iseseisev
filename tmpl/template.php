@@ -6,6 +6,7 @@
  * Date: 20-Apr-17
  * Time: 2:51 PM
  */
+// if TMPL_DIR is not defined
 if(!defined('TMPL_DIR')){
     // define this constatnt and use in class template
     define('TMPL_DIR', '../tmpl/');
@@ -16,6 +17,7 @@ class template
     // class variables
     var $file = ''; // template file name
     var $content = false; // template content is now empty
+    var $vars = array(); // table for real values of html template output
     // class methods
     // construct
     function __construct($f)
@@ -55,5 +57,5 @@ class template
     function readFile($f)
     {
         $this->content = file_get_contents($f);
-    }
-}
+    } // readfile
+} // class end
