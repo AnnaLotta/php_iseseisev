@@ -13,7 +13,7 @@ require_once TMPL_DIR.'template.php';
 // create a template object
 // set up the file name for template
 // load template file content
-$tmpl = new template('main');
+$tmpl = new template('main.php');
 // control the content of template object
 echo '<pre>';
 print_r($tmpl);
