@@ -58,4 +58,10 @@ class template
     {
         $this->content = file_get_contents($f);
     } // readfile
+    // set up html template elements and their real calues
+    // $name - template element name
+    // $val - real value for template element
+    function set($name, $val){
+        $this->vars[$name] = $val;
+    }// set
 } // class end
