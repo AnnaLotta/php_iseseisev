@@ -9,7 +9,7 @@
 define('CLASSES_DIR', 'classes/');
 define('TMPL_DIR', 'tmpl/');
 define('STYLE_DIR', 'css/');
-require_once TMPL_DIR.'template.php';
+require_once TMPL_DIR . 'template.php';
 // and use it
 // create a template object
 // set up the file name for template
