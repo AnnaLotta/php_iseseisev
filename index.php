@@ -17,16 +17,19 @@ require_once CLASSES_DIR.'template.php';
 // load template file content
 $tmpl = new template('main.html');
 // add pairs of template element names and real values
-$tmpl->set('menu', 'Menu');
-$tmpl->set('nav_bar', 'Navigation');
+// $tmpl->set('menu', 'Menu');
+require_once 'menu.php';
+require_once 'act.php';
+$tmpl->set('nav_bar', $sess->user_data['username']);
 $tmpl->set('lang_bar', 'Languages');
 $tmpl->set('content', 'Content');
 $tmpl->set('style', STYLE_DIR.'main.css');
 $tmpl->set('header', 'Page title');
 // control the content of template object
+echo '<pre>';
+//print_r($sess);
+echo '</pre>';
+// output template content set up with real values
 echo $tmpl->parse();
-
-// echo '<pre>;
-//print_r($db);
 
 ?>
