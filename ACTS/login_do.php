@@ -12,7 +12,7 @@ $sql = 'select * FROM user WHERE '.'username ='.fixDb($username).' AND '.'passwo
 $res =$db->getArray($sql);
 if ($res === false){
     $sess->set ('login_error', tr('Viga sisselogimisel'));
-    $link = $http->geLink(array('act'=>'login'), array('username'));
+    $link = $http->getLink(array('act'=>'login'), array('username'));
     $http->redirect($link);
 }
 else{
